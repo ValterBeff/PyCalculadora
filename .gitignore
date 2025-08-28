@@ -1,0 +1,52 @@
+# Ignora arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Ignora arquivos de backup do editor
+*~
+*.swp
+*.swo
+
+# Ignora pastas de compilação comuns
+build/
+dist/
+out/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignora binários e objetos compilados
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# Ignora arquivos de log
+*.log
+
+# Ignora dependências
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Ignora configurações locais do VS Code
+.vscode/
+
+# Ignora arquivos da Arduino IDE
+*.hex
+*.elf
+
+# Ignora pastas de cache do Arduino
+*.dep
+*.d
+*.bin
