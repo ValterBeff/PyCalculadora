@@ -1,5 +1,6 @@
 import qdarkstyle
-from variables import (DARKER_PRIMARY_COLOR, DARKEST_PRIMARY_COLOR, PRIMARY_COLOR)
+from variables import (DARKER_PRIMARY_COLOR, DARKEST_PRIMARY_COLOR,
+                       PRIMARY_COLOR)
  
 qss = f"""
     QPushButton[cssClass="specialButton"] {{
@@ -16,8 +17,7 @@ qss = f"""
         background: {DARKEST_PRIMARY_COLOR};
     }}
 """
- 
- 
+
 def setupTheme(app):
     # Aplicar o estilo escuro do qdarkstyle
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyside6())
