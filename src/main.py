@@ -1,39 +1,55 @@
 import sys
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QApplication
 
+# Importações dos módulos do projeto
 from buttons import ButtonsGrid
 from display import Display
 from info import Info
 from main_window import MainWindow
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication
 from styles import setupTheme
 from variables import WINDOW_ICON_PATH
 
 if __name__ == '__main__':
-
-    # Cria a Aplicação
+    # ============================
+    # Criação da Aplicação
+    # ============================
     app = QApplication(sys.argv)
+
+    # Aplicar tema customizado
     setupTheme(app)
+
+    # Criar janela principal
     window = MainWindow()
 
-    # Definir o Icon
+    # ============================
+    # Configurar ícone da aplicação
+    # ============================
     icon = QIcon(str(WINDOW_ICON_PATH))
     window.setWindowIcon(icon)
     app.setWindowIcon(icon)
 
-    # Info
-    info = Info('')
+    # ============================
+    # Adicionar widget de informações
+    # ============================
+    info = Info('')  # Pode ser usado para mensagens ou status
     window.addWidgetToVLayout(info)
 
-    # Display
+    # ============================
+    # Adicionar display da calculadora
+    # ============================
     display = Display()
     window.addWidgetToVLayout(display)
-    
-    # Grid
-    buttonsGrid = ButtonsGrid(display,info, window)
+
+    # ============================
+    # Adicionar grid de botões
+    # ============================
+    buttonsGrid = ButtonsGrid(display, info, window)
     window.vLayout.addLayout(buttonsGrid)
 
-    # Executa Aplicação
-    window.adjustFixedSize()  
+    # ============================
+    # Ajustar tamanho da janela e executar
+    # ============================
+    window.adjustFixedSize()
     window.show()
     app.exec()

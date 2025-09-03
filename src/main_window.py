@@ -1,27 +1,40 @@
 from PySide6.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout,QMessageBox
+    QMainWindow, QWidget, QVBoxLayout, QMessageBox
 )
 
 class MainWindow(QMainWindow):
-    def __init__(self, parent : QWidget | None = None, *args, **kwargs) -> None:
+    def __init__(self, parent: QWidget | None = None, *args, **kwargs) -> None:
         super().__init__(parent, *args, **kwargs)
 
-        # Configuração do Layout Basíco
+        # ============================
+        # Configuração do Layout Básico
+        # ============================
         self.cw = QWidget()
         self.vLayout = QVBoxLayout()
         self.cw.setLayout(self.vLayout)
         self.setCentralWidget(self.cw)
          
-         # Titulo do Programa
+        # ============================
+        # Título do Programa
+        # ============================
         self.setWindowTitle('CALCULADORA')
 
+    # ============================
+    # Ajusta a janela para tamanho fixo
+    # ============================
     def adjustFixedSize(self):
-            # Tamnho da Janela
-            self.adjustSize()
-            self.setFixedSize(self.width(), self.height())
+        # Ajusta o tamanho da janela e fixa
+        self.adjustSize()
+        self.setFixedSize(self.width(), self.height())
 
+    # ============================
+    # Adiciona widget ao layout vertical
+    # ============================
     def addWidgetToVLayout(self, widget: QWidget):
         self.vLayout.addWidget(widget)
 
+    # ============================
+    # Cria e retorna uma caixa de diálogo
+    # ============================
     def makeMsgBox(self):
-         return QMessageBox(self)
+        return QMessageBox(self)
